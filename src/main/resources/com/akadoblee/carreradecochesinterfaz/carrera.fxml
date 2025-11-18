@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.akadoblee.carreradecochesinterfaz.CarreraController" prefWidth="1050" prefHeight="550">
+
+    <top>
+
+        <Label text="Gran Premio de Adrianolandia" styleClass="title" BorderPane.alignment="CENTER" />
+
+    </top>
+
+    <center>
+
+        <VBox spacing="20">
+
+            <padding>
+
+                <Insets top="20" right="20" bottom="20" left="20"/>
+
+            </padding>
+
+            <VBox fx:id="carsContainer" spacing="12" />
+
+        </VBox>
+
+    </center>
+
+    <right>
+
+        <VBox spacing="12" prefWidth="250">
+
+            <padding>
+
+                <Insets top="20" right="20" bottom="20" left="20"/>
+
+            </padding>
+
+            <Label text="Clasificación" styleClass="classification-title" />
+            <ListView fx:id="resultsList" prefHeight="350" />
+
+        </VBox>
+
+    </right>
+
+    <bottom>
+
+        <HBox spacing="15" alignment="CENTER">
+
+            <padding><Insets top="15" right="15" bottom="20" left="15"/></padding>
+            <Button fx:id="startButton" text="Iniciar carrera" onAction="#onStartButton" />
+
+        </HBox>
+
+    </bottom>
+
+</BorderPane>
