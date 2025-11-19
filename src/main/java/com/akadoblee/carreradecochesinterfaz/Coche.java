@@ -8,7 +8,7 @@ public class Coche extends Thread {
     private int velocidadMaxima;
     private Carrera carrera;
 
-    public Coche(String nombre, int distanciaTotal ,int velocidadMaxima, Carrera carrera) {
+    public Coche(String nombre, int distanciaTotal, int velocidadMaxima, Carrera carrera) {
 
         this.nombre = nombre;
         this.distanciaRecorrida = 0;
@@ -29,10 +29,12 @@ public class Coche extends Thread {
             distanciaRecorrida += avance;
 
             if (distanciaRecorrida > distanciaTotal) {
+
                 distanciaRecorrida = distanciaTotal;
+
             }
 
-            carrera.registrarProgreso(nombre, distanciaRecorrida);
+            carrera.actualizarProgreso(nombre, distanciaRecorrida);
 
             try {
 
