@@ -141,7 +141,6 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 12, 0.4, 0, 4);
 }
 
-/* Scrollbar personalizado */
 .scroll-bar:vertical {
     -fx-background-color: transparent;
 }
