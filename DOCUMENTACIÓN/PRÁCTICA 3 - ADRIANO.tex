@@ -1,0 +1,355 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+\usepackage{tabularx}
+\usepackage{fancyvrb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage[T1]{fontenc}
+\renewcommand*\familydefault{\sfdefault}
+\usepackage{librefranklin}
+
+\setlength{\parindent}{0pt}
+\onehalfspacing
+
+\begin{document}
+
+\begin{titlepage}
+
+    \centering
+    \vspace*{1 cm}
+    \Huge
+    \textbf{Carrera de Coches}
+
+    \vspace{0.5 cm}
+    \Large
+    Programación de Servicios y Procesos
+
+    \vspace{5.5 cm}
+    \textbf{Adrián Condines Celada}
+
+    \vspace{0.8 cm}    
+    \normalsize
+    Aula Estudio\\
+
+    \vspace{0.8 cm}
+    2º Ciclo Superior - Desarrollo de Aplicaciones Multiplataforma\\
+
+    \vspace{0.8 cm}
+    Curso 2025 - 2026
+
+\end{titlepage}
+
+\tableofcontents
+
+\newpage
+
+\section{Introducción}
+
+\justify
+Esta es una aplicación Java que simula una competición entre seis vehículos mediante programación multihilo e interfaz gráfica JavaFX. 
+
+\justify
+La aplicación permite observar en tiempo real el progreso de cada coche mediante barras de progreso y una clasificación dinámica.
+
+\section{Stack Tecnológico}
+
+\subsection{Java}
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=3.5cm]{images/java_icon.png}
+
+\end{figure}
+
+\justify
+El lenguaje de programación utililazo para desarrollar la lógica de la aplicación es Java, debido a su robustez y capacidad para manejar múltiples hilos de ejecución.
+
+\subsection{JavaFX}
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=5cm]{images/javafx_icon.png}
+
+\end{figure}
+
+\justify
+JavaFX se ha utilizado como tecnología para desarrollar la interfaz gráfica de la aplicación, proporcionando una manera visual de ver el resultado del programa.
+
+\newpage
+
+\subsection{CSS}
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=3.5cm]{images/css_icon.png}
+
+\end{figure}
+
+\justify
+CSS se ha utilizado para dar estilo a la interfaz gráfica desarrollada con JavaFX, mejorando la experiencia del usuario.
+
+\subsection{Visual Studio Code}
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=7cm]{images/vscode_icon.png}
+
+\end{figure}
+
+\justify
+Como IDE se ha utilizado Visual Studio Code, que gracias a sus extensiones permite un desarrollo eficiente en Java y JavaFX.
+
+\section{Requisitos Funcionales}
+
+\justify
+La aplicación cumple con los siguientes requisitos funcionales.
+
+\justify
+\textbf{RF-1}: Inciciación de la carrera al pulsar un botón.
+
+\justify
+\textbf{RF-2}: Simulación del movimiento de cada coche de manera aleatoria hasta que llegan a la meta.
+
+\justify
+\textbf{RF-3}: Barras de progreso que simulan la distancia recorrida por cada coche.
+
+\justify
+\textbf{RF-4}: Mostrar la clasificación final de los coches por orden de llegada.
+
+\justify
+\textbf{RF-5}: Posibilidad de reiniciar la carrera para una nueva simulación.
+
+\section{Requisitos No Funcionales}
+
+\justify
+La aplicación cumple con los siguientes requisitos no funcionales.
+
+\justify
+\textbf{RNF-1}: Manejo correcto de hilos para evitar bloqueos.
+
+\justify
+\textbf{RNF-2}: Compatibilidad con todos los sistemas operativos, ya que está desarrollada en Java.
+
+\justify
+\textbf{RNF-3}: Interfaz sencilla e intuitiva para el usuario.
+
+\section{Casos de Uso}
+
+\justify
+A continuación se describen los casos de uso principales de la aplicación:
+
+\begin{table}[h]
+    \centering
+
+    \begin{tabularx}{\textwidth}{|X|X|}\hline
+
+        \textbf{Casos de Uso}&  \textbf{Descripción}\\\hline
+        Iniciar aplicación&El usuario inicia la aplicación para simular la carrera entre los seis vehículos.\\ \hline
+
+    \end{tabularx}
+  
+\end{table}
+
+\section{Historias de Usuario}
+
+\justify
+A continuación se describen las historias de usuario principales de la aplicación:
+
+\begin{table}[h]
+
+    \centering
+
+    \begin{tabularx}{\textwidth}{|X|X|X|X|}\hline
+
+        \textbf{ID}&  \textbf{Como un...}& \textbf{Quiero...}& \textbf{Para...}\\\hline
+
+        HU-1&Usuario&Iniciar la aplicación&Simular el funcionamiento de una carrera entre seis coches.\\ \hline
+
+    \end{tabularx}
+
+\end{table}
+
+\newpage
+
+\section{Estructura del Proyecto}
+
+\justify
+La estructura del proyecto está organizada de la siguiente manera:
+
+\begin{verbatim}
+    
+CarreraDeCochesInterfaz/
+|-- DOCUMENTACIÓN/
+|   |-- images/
+|   |    |-- css_icon.png
+|   |    |-- interfaz_1.png
+|   |    |-- interfaz_2.png
+|   |    |-- interfaz_3.png
+|   |    |-- java_icon.png
+|   |    |-- javafx_icon.png
+|   |    |-- vscode_icon.png
+|   |-- DOCUMENTACIÓN CARRERA DE COCHES - ADRIANO.tex
+|   |-- DOCUMENTACIÓN CARRERA DE COCHES - ADRIANO.pdf
+|-- src/main
+|    |-- java/
+|    |    |-- com/akadoblee/carreradecochesinterfaz/
+|    |    |    |-- App.java
+|    |    |    |-- Coche.java
+|    |    |    |-- Carrera.java
+|    |-- resources/
+|    |    |-- carrera.fxml
+|    |    |-- styles.css
+
+\end{verbatim}
+
+\newpage
+
+\section{Clases Principales}
+
+\subsection{Clase App}
+
+\subsubsection{Descripción}
+
+\justify
+La clase \textbf{App} es la clase principal que inicia la aplicación JavaFX.
+
+\subsubsection{Atributos}
+
+\justify
+No cuenta con atributos propios, pero maneja referencias a la interfaz gráfica.
+
+\subsubsection{Métodos}
+
+\justify
+Los métodos de la clase \textbf{App} son los siguientes:
+
+\begin{itemize}
+
+    \item \textbf{start(Stage stage)}: Método que configura y muestra la ventana principal de la aplicación.
+    \item \textbf{main(String[] args)}: Método principal que lanza la aplicación JavaFX.
+
+\end{itemize}
+
+\subsection{Clase Coche}
+
+\subsubsection{Descripción}
+
+\justify
+La clase \textbf{Coche} representa a cada uno de los vehículos que participan en la carrera. Cada coche es un hilo independiente que simula su movimiento hasta llegar a la meta.
+
+\subsubsection{Atributos}
+
+\justify
+Los atributos de la clase \textbf{Coche} son los siguientes:
+
+\begin{itemize}
+
+    \item \texttt{String} \textbf{nombre}: Nombre del coche.
+    \item \texttt{int} \textbf{distanciaRecorrida}: Distancia que el coche ha recorrido hasta ese momento.
+    \item \texttt{int} \textbf{distanciaTotal}: Distancia total que debe recorrer el coche para llgar a la meta.
+    \item \texttt{int} \textbf{velocidadMaxima}: Velocidad máxima que puede alcanzar el coche.
+    \item \texttt{Carrera} \textbf{carrera}: Referencia a la carrera en la que participa el coche.
+    
+\end{itemize}
+
+\subsubsection{Métodos}
+
+\justify
+Los métodos de la clase \textbf{Coche} son los siguientes:
+
+\begin{itemize}
+
+    \item \textbf{run()}: Método principal del hilo que simula el movimiento del coche.
+    \item \textbf{getNombre()}: Devuelve el nombre del coche.
+    \item \textbf{getDistanciaRecorrida()}: Devuelve la distancia recorrida por el coche.
+    \item \textbf{getDistanciaTotal()}: Devuelve la distancia que debe de recorrer el coche para finalizar la carrera
+    
+\end{itemize}
+
+\subsection{Clase Carrera}
+
+\subsubsection{Descripción}
+
+\justify
+La clase \textbf{Carrera} gestiona la lógica de la carrera, incluyendo la creación de coches, el seguimiento de su progreso y la actualización de la interfaz gráfica.
+
+\subsubsection{Atributos}
+
+\justify
+Los atributos de la clase \textbf{Carrera} son los siguientes:
+
+\begin{itemize}
+
+    \item \texttt{Map<String, ProgressBar>} \textbf{barras}: Representa cada una de las barras de progreso asociadas a cada uno de los coches.
+    \item \texttt{Map<String, Label>} \textbf{etiquetasDistancia}: Muestra la distancia recorrida por cada coche en metros.
+    \item \texttt{List<String>} \textbf{clasificacion}: Lista que almacena el orden de llegada de los coches a la meta.
+    \item \texttt{int} \textbf{DISTANCIA\_TOTAL}: Distancia total que deben recorrer los coches para llegar a la meta.
+
+\end{itemize}
+
+\newpage
+
+\subsubsection{Métodos}
+
+\justify
+Los métodos de la clase \textbf{Carrera} son los siguientes:
+
+\begin{itemize}
+
+    \item \textbf{onStartButton()}: Crea los objetos de la clase Coche y los inicia como hilos independientes para comenzar la carrera.
+    \item \textbf{añadirCarta()}: Añade una carta por cada coche en la interfaz gráfica.
+    \item \textbf{actualizarProgreso()}: Actualiza las barras de progreso y las etiquetas de distancia en la interfaz gráfica.
+    \item \textbf{registrarLlegada()}: Registra la llegada de un coche a la meta y actualiza la clasificación.
+    \item \textbf{getClasificacion()}: Devuelve la lista con la clasificación final de los coches.
+
+\end{itemize}
+
+\section{Interfaz}
+
+\justify
+La interfaz gráfica de la aplicación consta de tres secciones:
+
+\begin{itemize}
+
+    \item \textbf{Sección Superior}: Se compone del título de la aplicación.
+    \item \textbf{Sección Central}: Se compone de una sección izquierda que al principio está vacía pero posteriormente se añaden los coches en ella, y una sección derecha en la que hay un panel que muestra la clasificación de los coches conforme van llegando a la meta.
+    \item \textbf{Sección Inferior}: Incluye el botón para iniciar la simulación.
+
+\end{itemize}
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=12cm]{images/interfaz_1.png}
+
+\end{figure}
+
+\newpage
+
+\justify
+Una vez iniciada la carrera, la interfaz muestra el progreso de cada coche mediante barras de progreso y etiquetas que indican la distancia recorrida. \newline
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=12cm]{images/interfaz_2.png}
+
+\end{figure}
+
+\justify
+Al finalizar la carrera, la interfaz muestra la clasificación final de los coches en el panel derecho y la carrera puede ser iniciada de nuevo pulsando nuevamente sobre le botón. \newline
+
+\begin{figure}[h]
+
+    \centering
+    \includegraphics[width=12cm]{images/interfaz_3.png}
+
+\end{figure}
+
+\end{document}

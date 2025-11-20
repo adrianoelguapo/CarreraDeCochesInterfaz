@@ -48,12 +48,12 @@ public class Carrera {
         Coche c5 = new Coche("Subaru Impreza", DISTANCIA_TOTAL, 225, this);
         Coche c6 = new Coche("Honda S2000", DISTANCIA_TOTAL, 200, this);
 
-        addCarUI(c1.getNombre());
-        addCarUI(c2.getNombre());
-        addCarUI(c3.getNombre());
-        addCarUI(c4.getNombre());
-        addCarUI(c5.getNombre());
-        addCarUI(c6.getNombre());
+        añadirCarta(c1.getNombre());
+        añadirCarta(c2.getNombre());
+        añadirCarta(c3.getNombre());
+        añadirCarta(c4.getNombre());
+        añadirCarta(c5.getNombre());
+        añadirCarta(c6.getNombre());
 
         c1.start();
         c2.start();
@@ -63,7 +63,7 @@ public class Carrera {
         c6.start();
     }
 
-    private void addCarUI(String nombre) {
+    private void añadirCarta(String nombre) {
 
         HBox row = new HBox(15);
         row.getStyleClass().add("car-row");
